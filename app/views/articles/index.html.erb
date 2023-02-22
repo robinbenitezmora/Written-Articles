@@ -3,7 +3,9 @@
 <ul>
   <% @lectures.each do |lecture| %>
     <li>
-      <%= link_to lecture.title %>
+      <a href='/articles/<%= lecture.id %>'>
+        <%= lecture.title %>
+      </a>
     </li>
   <% end %>
 </ul>
