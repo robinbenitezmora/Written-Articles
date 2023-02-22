@@ -20,4 +20,9 @@ class ArticlesController < ApplicationController
       render :new, status: :unprocessable_entity      
     end
   end
+
+  private #Possible change Here
+    def article_params
+      params.require(:lecture).permit(:title, :body)
+    end
 end
