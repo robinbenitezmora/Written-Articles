@@ -1,17 +1,23 @@
 <h1>New Article</h1>
 
-<%= form_with model: @lecture do |f| %>
+<%= form_with model: @article do |f| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <% @article.errors.full_message_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_field :body %>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %><br>
+    <% @article.errors.full_message_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

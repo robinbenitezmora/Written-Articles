@@ -1,21 +1,21 @@
 class ArticlesController < ApplicationController
   def index
-    @lectures = Lecture.all
+    @articles = Article.all
   end
 
   def show
-    @lecture = Lecture.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def new
-    @lecture = Lecture.new
+    @article = Article.new
   end
 
   def create
-    @lecture = Lecture.new(title: "...", body: "...")
+    @article = Article.new(title: "...", body: "...")
 
-    if @lecture.save
-      redirect_to @lecture
+    if @article.save
+      redirect_to @article
     else
       render :new, status: :unprocessable_entity      
     end
@@ -23,6 +23,6 @@ class ArticlesController < ApplicationController
 
   private #Possible change Here
     def article_params
-      params.require(:lecture).permit(:title, :body)
+      params.require(:article).permit(:title, :body)
     end
 end
