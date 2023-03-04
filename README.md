@@ -137,7 +137,7 @@ Example command:
 
 To run the project, copay the following URL:
 
-https://github.com/robinbenitezmora/Working-Remotely
+https://github.com/robinbenitezmora/Written-Articles
 
 <!--
 Example command:
